@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>listeCommande</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Bon de commande n° <?= $orderNumber ?></h1>
+        <ul class="customer-infos">
+          <li><?= $customerInfos['customerName'] ?></li>
+          <li><span>Contact: </span><?= $customerInfos['contactLastName'].' '.$customerInfos['contactFirstName'] ?></li>
+          <li><span>Tél: </span><?= $customerInfos['phone'] ?></li>
+          <li><span>Address: </span><?= $customerInfos['addressLine1'].' '.$customerInfos['addressLine2'] ?>
+            <br><?= $customerInfos['city'].' '.$customerInfos['state'].' '.$customerInfos['postalCode'].' '.$customerInfos['country'] ?></li>
+        </ul>
+
+        <table class="commandes">
+          <tr>
+              <th>Produit</th>
+              <th>Prix Unité</th>
+              <th>Quantité</th>
+              <th>Prix total</th>
+          </tr>
+          <?php foreach ($commande_products as $key => $value) :?>
+            <tr>
+                  <td><?= $value['productName'] ?></td>
+                  <td><?= number_format($value['priceEach'],2) ?></td>
+                  <td><?= $value['quantityOrdered'] ?></td>
+                  <td><?= number_format($value['prixTotal'],2, '.', ' ') ?></td>
+            </tr>
+          <?php endforeach;  ?>
+            <tr>
+              <td></td><td></td><td></td><td>Montant HT : <?= $montantHT ?></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td>Montant TVA : <?= $montantTVA ?></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td>Montant TTC : <?= $montantTTC ?></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td><a href="index.php">Retourner à l'accueil</a></td>
+            </tr>
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+h1{
+  text-align: center;
+  margin-top: 50px;
+}
+ul{
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+ul:first-of-type{
+  font-weight: bold;
+}
+li{
+  display: flex;
+  justify-content: center;
+  height: 30px;
+}
+ul.customer-infos{
+  font-weight: normal;
+  font-style: italic;
+  flex-flow: column wrap;
+  width: 30%;
+  margin-left: 60%;
+  margin-top: 70px;
+}
+ul.customer-infos li span{
+  font-weight: bold;
+}
+table.commandes{
+  width: 80%;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+table.commandes th, table.commandes td{
+  width: 25%;
+  height: 50px;
+  text-align: center;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>listeCommande</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Liste de commandes</h1>
+
+        <ul>
+          <li>Commande</li>
+          <li>Date commande</li>
+          <li>Date livraison</li>
+          <li>Statut</li>
+        </ul>
+
+        <?php foreach($orders as $key => $value): ?>
+          <ul>
+              <li><a href="bonCommande.php?orderNumber=<?= $value['orderNumber'] ?>"><?= $value['orderNumber'] ?></a></li>
+              <li><?= $value['orderDate'] ?></li>
+              <li><?= $value['shippedDate'] ?></li>
+              <li><?= $value['status'] ?></li>
+          </ul>
+        <?php endforeach; ?>
+
+    </body>
+</html>
